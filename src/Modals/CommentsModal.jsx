@@ -53,20 +53,20 @@ const CommentsModal = ({ isOpen, onClose, post }) => {
             {post.comments.map((comment, idx) => (
               <Comment key={idx} comment={comment} />
             ))}
+            <form onSubmit={handleSubmitComment} style={{ marginTop: "2rem" }}>
+              <Input placeholder="Comment" size={"sm"} ref={commentRef} />
+              <Flex w={"full"} justifyContent={"flex-end"}>
+                <Button
+                  type="submit"
+                  ml={"auto"}
+                  size={"sm"}
+                  my={4}
+                  isLoading={isCommenting}>
+                  Post
+                </Button>
+              </Flex>
+            </form>
           </Flex>
-          <form onSubmit={handleSubmitComment} style={{ marginTop: "2rem" }}>
-            <Input placeholder="Comment" size={"sm"} ref={commentRef} />
-            <Flex w={"full"} justifyContent={"flex-end"}>
-              <Button
-                type="submit"
-                ml={"auto"}
-                size={"sm"}
-                my={4}
-                isLoading={isCommenting}>
-                Post
-              </Button>
-            </Flex>
-          </form>
         </ModalBody>
       </ModalContent>
     </Modal>
