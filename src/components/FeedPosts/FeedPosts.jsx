@@ -38,9 +38,9 @@ const FeedPosts = () => {
       {!isLoading && posts.length === 0 && (
         <>
           <Text fontSize={"md"} color={"red.400"}>
-            Daamn,bro. Looks like you don&apos;t have any friends.
+            you cannnot see a post cause you are not following any user
           </Text>
-          <Text color={"red.400"}>Stop coding and go make some!!</Text>
+          <Text color={"red.400"}>try following some users!!!</Text>
         </>
       )}
     </Container>
