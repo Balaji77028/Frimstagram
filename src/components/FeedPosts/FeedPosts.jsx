@@ -38,9 +38,9 @@ const FeedPosts = () => {
       {!isLoading && posts.length === 0 && (
         <>
           <Text fontSize={"md"} color={"red.400"}>
-            follow users to see posts!!!
+            Daamn,bro. Looks like you don&apos;t have any friends.
           </Text>
-          <Text color={"red.400"}></Text>
+          <Text color={"red.400"}>Stop coding and go make some!!</Text>
         </>
       )}
     </Container>
