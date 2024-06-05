@@ -9,8 +9,9 @@ const SidebarItems = () => {
     <>
       <Home />
       <Search />
-      <Notifications />
       <CreatePost />
+      <Notifications />
+
       <ProfileLink />
     </>
   );

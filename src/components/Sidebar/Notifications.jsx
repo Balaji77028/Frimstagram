@@ -7,14 +7,17 @@ import {
   ModalContent,
   ModalHeader,
   ModalOverlay,
+  Text,
   Tooltip,
   useDisclosure,
 } from "@chakra-ui/react";
 import { useEffect, useRef } from "react";
 import { NotificationsLogo } from "../../assets/constants";
+import useGetSuggestedUsers from "../../hooks/useGetSuggestedUsers";
 import Notificationssuser from "../SuggestedUsers/Notificationssuser";
 
 const Notifications = () => {
+  const { isLoading, suggestedUsers } = useGetSuggestedUsers();
   const { isOpen, onOpen, onClose } = useDisclosure();
   const suggestedContainerRef = useRef(null);
 
@@ -48,7 +51,7 @@ const Notifications = () => {
           justifyContent={{ base: "center", md: "flex-start" }}
           onClick={onOpen}>
           <NotificationsLogo />
-          <Box display={{ base: "none", md: "block" }}>Notifications</Box>
+          <Box display={{ base: "none", md: "block" }}>Suggestions</Box>
         </Flex>
       </Tooltip>
 
@@ -65,6 +68,16 @@ const Notifications = () => {
               maxH={"250px"}
               overflowY={"auto"}
               ref={suggestedContainerRef}>
+              {!isLoading && suggestedUsers.length === 0 && (
+                <>
+                  <Text fontSize={"md"} color={"red.400"} alignSelf={"center"}>
+                    Look&apos;s like you have enough friends to see.
+                  </Text>
+                  <Text fontSize={"md"} color={"red.400"} alignSelf={"center"}>
+                    Number of followers a User can have is only 10!!!
+                  </Text>
+                </>
+              )}
               <Notificationssuser />
             </Flex>
           </ModalBody>

@@ -1,5 +1,5 @@
 import { Box, Flex, Text } from "@chakra-ui/react";
-import { BsBookmark, BsGrid3X3, BsSuitHeart } from "react-icons/bs";
+import { BsGrid3X3 } from "react-icons/bs";
 
 const ProfileTabs = () => {
   return (
@@ -22,8 +22,14 @@ const ProfileTabs = () => {
           Posts
         </Text>
       </Flex>
+    </Flex>
+  );
+};
 
-      <Flex alignItems={"center"} p={3} gap={1} cursor={"pointer"}>
+export default ProfileTabs;
+
+{
+  /* <Flex alignItems={"center"} p={3} gap={1} cursor={"pointer"}>
         <Box fontSize={20}>
           <BsBookmark />
         </Box>
@@ -37,11 +43,8 @@ const ProfileTabs = () => {
           <BsSuitHeart fontWeight={"BOLD"} />
         </Box>
         <Text fontSize={12} display={{ base: "none", sm: "block" }}>
-          Posts
+          Liked
         </Text>
       </Flex>
-    </Flex>
-  );
-};
-
-export default ProfileTabs;
+    */
+}

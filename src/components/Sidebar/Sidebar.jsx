@@ -1,13 +1,23 @@
-import { Box, Button, Flex, Link, Tooltip } from "@chakra-ui/react";
+import {
+  Box,
+  Button,
+  Flex,
+  Link,
+  Tooltip,
+  useDisclosure,
+} from "@chakra-ui/react";
 import { Link as RouterLink } from "react-router-dom";
 import { InstagramLogo, InstagramMobileLogo } from "../../assets/constants";
 
 import { BiLogOut } from "react-icons/bi";
+import { IoMdInformationCircleOutline } from "react-icons/io";
 import useLogout from "../../hooks/useLogout";
+import AboutPage from "../../pages/AboutPage/AboutPage";
 import SidebarItems from "./SidebarItems";
 
 const Sidebar = () => {
   const { handleLogout, isLoggingOut } = useLogout();
+  const { isOpen, onOpen, onClose } = useDisclosure();
   return (
     <Box
       height={"100vh"}
@@ -43,6 +53,30 @@ const Sidebar = () => {
         <Flex direction={"column"} gap={5} cursor={"pointer"}>
           <SidebarItems />
         </Flex>
+
+        {/* About */}
+        <Tooltip
+          hasArrow
+          label={"About"}
+          placement="right"
+          ml={1}
+          openDelay={500}
+          display={{ base: "block", md: "none" }}>
+          <Flex
+            alignItems={"center"}
+            gap={4}
+            _hover={{ bg: "whiteAlpha.400" }}
+            borderRadius={6}
+            p={2}
+            w={{ base: 10, md: "full" }}
+            justifyContent={{ base: "center", md: "flex-start" }}
+            onClick={onOpen}>
+            {/* <ReelsLogo /> */} <IoMdInformationCircleOutline />
+            <Box display={{ base: "none", md: "block" }}>
+              About{isOpen && <AboutPage isOpen={isOpen} onClose={onClose} />}
+            </Box>
+          </Flex>
+        </Tooltip>
 
         {/* LOGOUT */}
         <Tooltip
