@@ -38,7 +38,7 @@ const AboutPage = ({ isOpen, onClose }) => {
                   GitHub
                 </Link>
               </Box>
-              <Box fontSize={12} color={"gray.500"} mt={5} alignSelf={"start"}>
+{/*               <Box fontSize={12} color={"gray.500"} mt={5} alignSelf={"start"}>
                 Check out my Portfolio {""}
                 <Link
                   href="https://balaji21.vercel.app/"
@@ -48,7 +48,7 @@ const AboutPage = ({ isOpen, onClose }) => {
                   style={{ textDecoration: "none" }}>
                   Portfolio
                 </Link>
-              </Box>
+              </Box> */}
             </Flex>
           </ModalBody>
         </ModalContent>
